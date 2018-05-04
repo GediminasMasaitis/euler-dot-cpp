@@ -5,7 +5,7 @@
 
 using namespace std;
 
-static bool is_pandigital1(string str)
+static bool is_pandigital_old(string str)
 {
     const auto full_pandigital = "123456789"s;
     return std::is_permutation(full_pandigital.begin(), full_pandigital.end(), str.begin(), str.end());
@@ -21,24 +21,24 @@ int64_t impl_32_1::solve()
 
     for(int64_t i = 1; i <= max; ++i)
     {
-        if(!is_pandigital(i, false))
+        if(!is_pandigital(i))
         {
             continue;
         }
         for (int64_t j = i+1; j <= max; ++j)
         {
-            if (!is_pandigital(j, false))
+            if (!is_pandigital(j))
             {
                 continue;
             }
             const int64_t prod = i * j;
-            if (!is_pandigital(prod, false))
+            if (!is_pandigital(prod))
             {
                 continue;
             }
             const auto ij_pand = concat_num(i, j);
             const auto pand = concat_num(ij_pand, prod);
-            if(is_pandigital(pand, true))
+            if(is_pandigital(pand, 9))
             {
                 pandigitals.insert(prod);
             }

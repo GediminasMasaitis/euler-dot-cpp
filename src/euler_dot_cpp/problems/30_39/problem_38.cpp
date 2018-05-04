@@ -20,7 +20,7 @@ int64_t impl_38_1::solve()
         }
         while(num <= 987654321)
         {
-            if(num > max && is_pandigital(num, true))
+            if(num > max && is_pandigital(num, 9))
             {
                 max = num;
             }
@@ -67,7 +67,7 @@ int64_t impl_38_2::solve()
     for (int64_t i = hi; i >= lo; --i)
     {
         const int64_t num = concat_num(i, i*2);
-        if (is_pandigital(num, true))
+        if (is_pandigital(num, 9))
         {
             return num;
         }

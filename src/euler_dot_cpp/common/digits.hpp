@@ -48,7 +48,7 @@ constexpr bool is_palindrome(T num, const int32_t base = 10)
 }
 
 template<typename TValue>
-constexpr bool is_pandigital(TValue num, const bool full, const int32_t base = 10)
+constexpr bool is_pandigital(TValue num, const int32_t require_digits = 0, const int32_t base = 10)
 {
     TValue bitmask = 0;
     auto count = 0;
@@ -70,7 +70,7 @@ constexpr bool is_pandigital(TValue num, const bool full, const int32_t base = 1
         count++;
         num /= base;
     }
-    return !full || (count == base - 1);
+    return require_digits == 0 || require_digits == count;
 }
 
 template<typename TValue, typename TDigit>

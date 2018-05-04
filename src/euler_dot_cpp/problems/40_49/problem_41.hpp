@@ -15,9 +15,9 @@ public:
 	{
 		id = 41;
 		name = "Pandigital prime";
-		answer = 0;
+		answer = 7652413;
         difficulty = 5;
-        solved = false;
+        solved = true;
 
         add_impl<impl_41_1>();
 	}
