@@ -1,24 +1,24 @@
 #pragma once 
 #include "../problem_base.hpp"
 
-class impl_$p_1 : public problem_impl_base
+class impl_42_1 : public problem_impl_base
 {
 public:
 	int64_t solve() override;
 };
 
 
-class problem_$p : public problem
+class problem_42 : public problem
 {
 public:
-	problem_$p()
+	problem_42()
 	{
-		id = $p;
+		id = 42;
 		name = "";
 		answer = 0;
         difficulty = 5;
         solved = false;
 
-        add_impl<impl_$p_1>();
+        add_impl<impl_42_1>();
 	}
 };

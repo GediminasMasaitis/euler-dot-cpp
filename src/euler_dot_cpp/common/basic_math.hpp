@@ -41,6 +41,12 @@ constexpr TValue factorial(TIndex num)
     return fact;
 }
 
+template<typename TValue>
+constexpr TValue triangle_num(TValue index)
+{
+    return (index * (index + 1)) / 2;
+}
+
 template
 <
     typename TValue,
