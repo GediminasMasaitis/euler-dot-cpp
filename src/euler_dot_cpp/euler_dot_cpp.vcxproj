@@ -234,6 +234,7 @@
     <ClInclude Include="problems\40_49\problem_47.hpp" />
     <ClInclude Include="problems\40_49\problem_48.hpp" />
     <ClInclude Include="problems\40_49\problem_49.hpp" />
+    <ClInclude Include="problems\50_59\problem_50.hpp" />
     <ClInclude Include="problems\all_problems.hpp" />
     <ClInclude Include="problems\problem_base.hpp" />
     <ClInclude Include="problems\1_9\problem_1.hpp" />
@@ -270,6 +271,7 @@
     <ClCompile Include="problems\40_49\problem_47.cpp" />
     <ClCompile Include="problems\40_49\problem_48.cpp" />
     <ClCompile Include="problems\40_49\problem_49.cpp" />
+    <ClCompile Include="problems\50_59\problem_50.cpp" />
     <ClCompile Include="problems\all_problems.cpp" />
     <ClCompile Include="euler_dot_cpp.cpp" />
     <ClCompile Include="problems\10_19\problem_10.cpp" />
