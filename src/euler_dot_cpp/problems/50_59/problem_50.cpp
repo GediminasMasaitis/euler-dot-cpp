@@ -19,6 +19,13 @@ int64_t impl_50_1::solve()
         {
             sum += primes[j];
             len++;
+            if (sum > prime && len < max_count)
+            {
+                // At this point, since primes are in increasing order,
+                // the length can only get shorter. And since we've found
+                // a longer line already, we can stop searching this prime.
+                break;
+            }
             while (sum > prime)
             {
                 --len;
