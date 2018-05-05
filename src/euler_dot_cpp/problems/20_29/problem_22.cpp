@@ -26,23 +26,5 @@ int64_t impl_22_1::solve()
 
 void problem_22::init()
 {
-    string all_text;
-
-    {
-        ifstream ifs;
-        open_input("p022_names.txt", ifs);
-        getline_s(ifs, all_text, '\n');
-    }
-
-    stringstream ss;
-    ss << all_text;
-
-    while(!ss.eof())
-    {
-        string _;
-        getline(ss, _, '"');
-        string name;
-        getline(ss, name, '"');
-        names.push_back(name);
-    }
+    names = read_string_list("p022_names.txt");
 }

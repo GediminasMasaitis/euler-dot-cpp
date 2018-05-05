@@ -15,7 +15,7 @@ public:
 	problem_22()
 	{
 		id = 22;
-		name = "Even Fibonacci numbers";
+		name = "Names scores";
 		answer = 871198282;
         difficulty = 5;
         solved = true;

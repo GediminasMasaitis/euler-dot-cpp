@@ -11,14 +11,18 @@ public:
 class problem_42 : public problem
 {
 public:
+    std::vector<std::string> words;
+
 	problem_42()
 	{
 		id = 42;
-		name = "";
-		answer = 0;
+		name = "Coded triangle numbers";
+		answer = 162;
         difficulty = 5;
-        solved = false;
+        solved = true;
 
         add_impl<impl_42_1>();
 	}
+
+    void init() override;
 };

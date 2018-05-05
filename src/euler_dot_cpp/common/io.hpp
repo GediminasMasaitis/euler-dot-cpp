@@ -61,3 +61,30 @@ inline std::vector<std::string> read_all_lines(const std::string name)
     }
     return lines;
 }
+
+inline std::vector<std::string> read_string_list(const std::string name)
+{
+    std::vector<std::string> strings;
+
+    std::string all_text;
+
+    {
+        std::ifstream ifs;
+        open_input(name, ifs);
+        getline_s(ifs, all_text, '\n');
+    }
+
+    std::stringstream ss;
+    ss << all_text;
+
+    while (!ss.eof())
+    {
+        std::string _;
+        getline(ss, _, '"');
+        std::string name;
+        getline(ss, name, '"');
+        strings.push_back(name);
+    }
+
+    return strings;
+}
