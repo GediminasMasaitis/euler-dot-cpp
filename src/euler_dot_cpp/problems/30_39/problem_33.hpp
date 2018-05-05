@@ -15,9 +15,9 @@ public:
 	{
 		id = 33;
 		name = "Digit cancelling fractions";
-		answer = 0;
+		answer = 100;
         difficulty = 5;
-        solved = false;
+        solved = true;
 
         add_impl<impl_33_1>();
 	}
