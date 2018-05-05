@@ -81,6 +81,10 @@ inline std::vector<std::string> read_string_list(const std::string name)
     {
         std::string _;
         getline(ss, _, '"');
+        if(ss.eof())
+        {
+            break;
+        }
         std::string name;
         getline(ss, name, '"');
         strings.push_back(name);

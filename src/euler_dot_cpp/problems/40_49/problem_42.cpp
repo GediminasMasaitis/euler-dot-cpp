@@ -2,6 +2,7 @@
 #include "problem_42.hpp"
 
 #include "../../common/io.hpp"
+#include "../../common/ngonal_numbers.h"
 
 using namespace std;
 
@@ -29,6 +30,29 @@ int64_t impl_42_1::solve()
             score += ch - 0x40;
         }
         if(is_triangle[score])
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int64_t impl_42_2::solve()
+{
+    auto& pr = static_cast<problem_42&>(*prblm);
+
+    const auto& words = pr.words;
+    int64_t count = 0;
+    for (auto i = 0; i < words.size(); i++)
+    {
+        auto& word = words[i];
+        auto score = 0;
+        for (auto ch : word)
+        {
+            score += ch - 0x40;
+        }
+        if (is_triangle_num(score))
         {
             count++;
         }
