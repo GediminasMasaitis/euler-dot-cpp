@@ -15,7 +15,7 @@ int64_t impl_3_1::solve()
 int64_t impl_3_2::solve()
 {
     int64_t max = 0;
-    prime_factors<int64_t, int64_t>(600851475143LL, [&max](int64_t factor)
+    prime_factors<int64_t, int64_t>(600851475143LL, false, [&max](int64_t factor)
     {
         if(factor > max)
         {

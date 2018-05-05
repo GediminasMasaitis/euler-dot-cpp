@@ -1,17 +1,33 @@
 #pragma once
 
 template<typename TNum, typename TResult = TNum>
-void prime_factors(TNum num, std::function<void(TResult)> act)
+void prime_factors(TNum num, const bool unique, std::function<void(TResult)> act)
 {
-    while (num % 2 == 0)
+    if (num % 2 == 0)
     {
         act(static_cast<TResult>(2));
         num /= 2;
     }
+    while (num % 2 == 0)
+    {
+        if (!unique)
+        {
+            act(static_cast<TResult>(2));
+        }
+        num /= 2;
+    }
 
-    while (num % 3 == 0)
+    if (num % 3 == 0)
     {
         act(static_cast<TResult>(3));
+        num /= 3;
+    }
+    while (num % 3 == 0)
+    {
+        if (!unique)
+        {
+            act(static_cast<TResult>(3));
+        }
         num /= 3;
     }
 
@@ -19,9 +35,17 @@ void prime_factors(TNum num, std::function<void(TResult)> act)
     const auto n_sqrt = static_cast<TResult>(sqrt(num));
     for (TResult i = 5; i <= n_sqrt; i += inc, inc ^= 6)
     {
-        while (num%i == 0)
+        if (num%i == 0)
         {
             act(i);
+            num /= i;
+        }
+        while (num%i == 0)
+        {
+            if (!unique)
+            {
+                act(i);
+            }
             num /= i;
         }
     }
@@ -36,7 +60,7 @@ template<typename TNum, typename TResult = TNum>
 std::vector<TResult> get_prime_factors(TNum num)
 {
     std::vector<TResult> factors;
-    prime_factors<TNum, TResult>(num, [&factors](TResult divisor)
+    prime_factors<TNum, TResult>(num, false, [&factors](TResult divisor)
     {
         factors.push_back(divisor);
     });
