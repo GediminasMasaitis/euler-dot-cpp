@@ -50,6 +50,7 @@
 #include "40_49/problem_43.hpp"
 #include "40_49/problem_44.hpp"
 #include "40_49/problem_45.hpp"
+#include "40_49/problem_46.hpp"
 
 #include "60_69/problem_62.hpp"
 #include "60_69/problem_67.hpp"
@@ -111,6 +112,7 @@ void init_problems(problems_map& problems)
     ptr_vec.emplace_back(make_unique<problem_43>());
     ptr_vec.emplace_back(make_unique<problem_44>());
     ptr_vec.emplace_back(make_unique<problem_45>());
+    ptr_vec.emplace_back(make_unique<problem_46>());
     
     ptr_vec.emplace_back(make_unique<problem_62>());
     ptr_vec.emplace_back(make_unique<problem_67>());
