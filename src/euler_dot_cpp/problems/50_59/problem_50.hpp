@@ -7,6 +7,12 @@ public:
 	int64_t solve() override;
 };
 
+class impl_50_2 : public problem_impl_base
+{
+public:
+    int64_t solve() override;
+};
+
 
 class problem_50 : public problem
 {
@@ -20,5 +26,6 @@ public:
         solved = false;
 
         add_impl<impl_50_1>();
+        add_impl<impl_50_2>();
 	}
 };
