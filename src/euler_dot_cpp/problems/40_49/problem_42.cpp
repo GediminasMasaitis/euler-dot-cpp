@@ -1,7 +1,6 @@
 #include "stdafx.hpp"
 #include "problem_42.hpp"
 
-#include "../../common/basic_math.hpp"
 #include "../../common/io.hpp"
 
 using namespace std;
